@@ -93,7 +93,7 @@ public class MainOrganizer {
         // Organize Students
         int choice2 = 1;
             
-        // Get User Choice 2
+        // Get User Choice 2 2
         System.out.print("Would you like to organize by name (1), year (2), or grade (3)?: ");
         choice2 = scan.nextInt();
         switch(choice2) {
