@@ -15,6 +15,7 @@ public class Student {
     private String name; //student's name
     private int year; //student's year
     private int grade; //student's grade
+    private String gender;
     private String yearofschool; //year of school
              
     //constructors
@@ -23,6 +24,7 @@ public class Student {
         name = "xx x";
         year = 2;
         grade = 50;
+        gender = "Female";
         //assign default attributes
     }
 
@@ -30,10 +32,11 @@ public class Student {
     //@param int studentYear
     //@param int studentGrade
     //@param String studentGender
-    public Student(String studentName, int studentYear,int studentGrade){
+    public Student(String studentName, int studentYear,int studentGrade, String studentGender){
          name = studentName;
          year = studentYear;
          grade = studentGrade;
+         gender = studentGender;
          
     }
     
@@ -64,6 +67,15 @@ public class Student {
         return grade;
     }
     
+    /*
+    *This method returns the gender of the student
+    *@return gender of the student
+    */
+    public String getGender(){
+        
+        return gender;
+    }
+    
     //Accessor
     /*
     *This method set the name of the student
@@ -79,7 +91,13 @@ public class Student {
     *@param int year;
     */
     public void setYear(int year){
-        this.year = year;
+        if(1<=year || 4 >=year){
+            this.year = year;
+        }
+        
+        else{
+            System.out.println("School of year should between 1 and 4. Please try again");
+        }
         
     }
     
@@ -92,9 +110,19 @@ public class Student {
             
             this.grade = grade;
         }
+        
         else{
             System.out.println("The grade should be lower than 100 and higher than 0");
+    }//end of if else statement
+        
     }
+    
+    /*
+    *This method set the gender of the student
+    *@param String gender;
+    */
+    public void setGender(String gender){
+        this.gender = gender; 
     }
     
     /*
@@ -119,7 +147,7 @@ public class Student {
             yearofschool = "Senior";
         }
         
-        return "Name: " + name + ",Year of the school: " + yearofschool + ",Grade: " + grade;
+        return "Name: " + name + ",Year of the school: " + yearofschool + ",Grade: " + grade + "Gender: " + gender;
     }
     
 }
