@@ -18,7 +18,7 @@ public class Class {
     Student myStudent;
     
     private Student[] students;
-    private Student[] tempStudents;
+    private Student[] tempArray;
     private int studentCount;
     
     
@@ -28,8 +28,7 @@ public class Class {
      */
     public Class() {
         // Create Empty Class
-        students = new Student[20];
-        tempStudents = new Student[20];
+        students = new Student[0];
         studentCount = students.length;
         myStudent = new Student();
         
@@ -63,20 +62,18 @@ public class Class {
         myStudent = new Student(name, year, grade, gender);
         
         
-        
-        students[studentCount] = myStudent;
-        
-        
+        tempArray = new Student[studentCount+1];
         int count = 0;
         while (count < studentCount){
-            
-            tempStudents[count] = students[count]; 
-            
+            tempArray[count] = students[count];
+            count += 1;
         }
         
+        tempArray[studentCount] = myStudent;
         
+        students = tempArray;
         
-        
+         
         
         // Change count
         studentCount = students.length;
