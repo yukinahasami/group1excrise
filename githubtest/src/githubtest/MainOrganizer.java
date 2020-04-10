@@ -35,9 +35,9 @@ public class MainOrganizer {
                    System.out.print("give me name (first name last name ");
                    String name = input.next();
                    System.out.print("give me the year ");
-                   String years = input.next();
+                   int years = input.nextInt();
                    System.out.print("give me the grade ");
-                   String grades = input.next();
+                   int grades = input.nextInt();
                    System.out.print("give me the gender ");
                    String gender = input.next();
                    
