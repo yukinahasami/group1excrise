@@ -147,7 +147,7 @@ public class Student {
             yearofschool = "Senior";
         }
         
-        return "Name: " + name + ",Year of the school: " + yearofschool + ",Grade: " + grade + "Gender: " + gender;
+        return "\nName: " + name + "\nYear of school: " + yearofschool + "\nGrade: " + grade + "\nGender: " + gender;
     }
     
 }
