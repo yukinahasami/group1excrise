@@ -38,8 +38,11 @@ public class MainOrganizer {
                    String years = input.next();
                    System.out.print("give me the grade ");
                    String grades = input.next();
+                   System.out.print("give me the gender ");
+                   String gender = input.next();
                    
-                   studentClass.addStudent(name, years, grades);
+                   
+                   StudentClass.addStudent(name, years, grades,gender);
                     break;
                 }
                 case 2: {
@@ -47,7 +50,7 @@ public class MainOrganizer {
                     // Remove student using user-entered name
                      System.out.print("give me the name you want to delete(first name last name ");
                      String name = input.next();
-                     studentClass.removeStudent(name);
+                     StudentClass.removeStudent(name);
                     break;
                 }
                 case 3: {
