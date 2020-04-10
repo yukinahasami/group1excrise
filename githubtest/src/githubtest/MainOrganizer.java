@@ -1,7 +1,7 @@
 /**
  * GitHub Exercise
  * MainOrganizer.java
- * Purpose: group project for Github 
+ * Purpose: group project for GitHub 
  * @author Yuxuan Xu(Michelle)
  */
 // Packages
@@ -25,33 +25,37 @@ public class MainOrganizer {
         int choice = 1;
         while (choice != 0) {
             // ask User  for Choice
-            System.out.print("Would you like to 1. add a student , 2. remove a student " +
-                            "( 3. organize the class , 4. display the class , or 5. exit: ");
+            System.out.print("Would you like to: \n1. add a student  \n2. remove a student " +
+                            "\n3. organize the class \n4. display the class \n5. exit \nChoice: ");
             choice = input.nextInt();
             switch(choice) {
                 case 1: {
                     // Create code to...
                     // Get user-entered info on new student and call add method 
-                   System.out.print("give me name (first name last name ");
-                   String name = input.next();
-                   System.out.print("give me the year ");
+                   System.out.println("\nGive me name (first name last name) ");
+                   input.nextLine();
+                   String name = input.nextLine();
+                   System.out.print("Give me the year ");
                    int years = input.nextInt();
-                   System.out.print("give me the grade ");
+                   System.out.print("Give me the grade ");
                    int grades = input.nextInt();
-                   System.out.print("give me the gender ");
-                   String gender = input.next();
+                   System.out.println("Give me the gender ");
+                   input.nextLine();
+                   String gender = input.nextLine();
                    
                    
                    StudentClass.addStudent(name, years, grades,gender);
-                    break;
+                   break;
                 }
                 case 2: {
                     // Create code to...
                     // Remove student using user-entered name
-                     System.out.print("give me the name you want to delete(first name last name ");
-                     String name = input.next();
+                     System.out.println("\nGive me the name you want to delete (first name last name) ");
+                     input.nextLine();
+                     String name = input.nextLine();
                      StudentClass.removeStudent(name);
                     break;
+                    
                 }
                 case 3: {
                     // Organize students
@@ -61,15 +65,16 @@ public class MainOrganizer {
                 }
                 case 4: {
                     // Display students
-                    System.out.println("Student List:");
+                    System.out.println("\nStudent List:");
                     for (Student student: StudentClass.getStudents()) {
                         System.out.println(student);
                     }
                     break;
                 }
-                case 0: {
+                case 5: {
                     // End program
-                    System.out.println("Ending Program");
+                    System.out.println("\nEnding Program");
+                    choice = 0;
                     break;
                 }
                 default: {
