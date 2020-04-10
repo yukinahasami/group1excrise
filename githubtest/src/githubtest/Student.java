@@ -6,7 +6,7 @@
  * 
  */
 
-package githubtext;
+package githubtest;
 
 
 public class Student {
