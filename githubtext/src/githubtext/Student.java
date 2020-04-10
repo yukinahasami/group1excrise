@@ -15,6 +15,7 @@ public class Student {
     private String name; //student's name
     private int year; //student's year
     private int grade; //student's grade
+    private String yearofschool; //year of school
              
     //constructors
     public Student(){
@@ -59,6 +60,7 @@ public class Student {
     *@return grade of the student
     */
     public int getGrade(){
+        
         return grade;
     }
     
@@ -82,12 +84,17 @@ public class Student {
     }
     
     /*
-    *This method set the grade of the student
+    *This method set the grade of the student and the grade should be between 0 -100
     *@param int grade;
     */
     public void setGrade(int grade){
-        this.grade = grade;
-        
+        if(grade>0 || grade<100){
+            
+            this.grade = grade;
+        }
+        else{
+            System.out.println("The grade should be lower than 100 and higher than 0");
+    }
     }
     
     /*
@@ -96,8 +103,23 @@ public class Student {
     */
     @Override
     public String toString(){
+        if (year == 1){
+            yearofschool = "Freshman";
+        }
         
-        return "Name: " + name + ",Year of the school: " + year + ",Grade: " + grade;
+        else if (year == 2){
+            yearofschool = "Sophomore";
+        }
+        
+        else if (year == 3){
+            yearofschool = "Junior";
+        }
+        
+        else if (year == 4){
+            yearofschool = "Senior";
+        }
+        
+        return "Name: " + name + ",Year of the school: " + yearofschool + ",Grade: " + grade;
     }
     
 }
